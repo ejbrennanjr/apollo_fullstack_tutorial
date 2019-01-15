@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Apollo tutorial
 
 This is the fullstack app for the [Apollo tutorial](http://apollographql.com/docs/tutorial/introduction.html). 🚀
@@ -23,3 +24,7 @@ and
 ```bash
 cd final/client && npm i && npm start
 ```
+=======
+# apollo_fullstack_tutorial
+Apollo website's tutorial
+>>>>>>> 255da8cadac32f5edbe6eea26f5ad92fff148d87
