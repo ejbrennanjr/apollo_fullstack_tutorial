@@ -11,10 +11,11 @@ class LaunchAPI extends RESTDataSource {
         return res && res.length ? res.map(l => this.launchReducer(l))
                                  : [];
     }
-
+    
     async getLaunchById( { launchId } ) {
         const res = await this.get('launches', { flight_number: launchId });
-        return this.launchReducer[res[0]];
+        
+        return this.launchReducer(res[0]);
     }
 
     async getLaunchByIds( { launchIds } ) {
