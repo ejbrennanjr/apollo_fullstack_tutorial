@@ -1,6 +1,6 @@
-const { RestDataSource } = require('apollo-datasource-rest');
+const { RESTDataSource } = require('apollo-datasource-rest');
 
-class LaunchAPI extends RestDataSource {
+class LaunchAPI extends RESTDataSource {
     constructor() {
         super();
         this.baseURL = 'https://api.spacexdata.com/v2/';
@@ -40,4 +40,4 @@ class LaunchAPI extends RestDataSource {
     }
 }
 
-module.export = LaunchAPI;
+module.exports = LaunchAPI;
