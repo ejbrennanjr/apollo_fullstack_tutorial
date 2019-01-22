@@ -6,8 +6,10 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import { Query, ApolloProvider } from 'react-apollo';
 import gql from 'graphql-tag';
+
 import Pages from './pages';
 import Login from './pages/login';
+import {resolvers, typeDefs} from './resolvers';
 import injectStyles from './styles';
 
 
@@ -23,7 +25,9 @@ const client =  new ApolloClient({
     initializers: {
         isLoggedIn: () => !!localStorage.getItem('token'),
         cartItems: () => []
-    }
+    },
+    resolvers,
+    typeDefs
 });
 
 

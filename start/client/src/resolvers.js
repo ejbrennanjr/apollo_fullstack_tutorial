@@ -23,5 +23,22 @@ export const resolvers = {
             const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
             return cartItems.includes(launch.id);
         }
+    },
+    Mutation: {
+        addOrRemoveFromCart: (_, { id }, { cache }) => {
+            console.log(`In addOrRemoveFromCart`)
+            const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
+            console.log(`cartItems=${cartItems}`)
+            const data = {
+                cartItems: cartItems.includes(id) ? cartItems.filter(i => i !== id)
+                                                  : [...cartItems, id]
+            }
+            console.log(data)
+            cache.writeQuery({ query: GET_CART_ITEMS, data });
+            let x = cache.readQuery({ query: GET_CART_ITEMS });
+            console.log(x)
+            return data.cartItems;
+        }
     }
 }
+
