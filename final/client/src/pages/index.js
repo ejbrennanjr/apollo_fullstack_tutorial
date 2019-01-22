@@ -5,7 +5,10 @@ import Launch from './launch';
 import Launches from './launches';
 import Cart from './cart';
 import Profile from './profile';
-import { Footer, PageContainer } from '../components';
+
+import Footer from '../components/footer';
+import PageContainer from '../components/page-container'
+
 
 export default function Pages() {
   return (
